@@ -1,5 +1,4 @@
 setup_vcs_info () {
-  autoload -Uz vcs_info
   local start="$PR_BLUE⟡-("
   local vcs="$PR_GREEN%s"
   local branch="$PR_BLUE : $PR_YELLOW%b"
@@ -123,7 +122,6 @@ function title {
 
 precmd () {
   title "%m: %15<..<%~%<<" "%m: %~"
-  vcs_info 'prompt'
 
   ## Setup the path length for the prompt
   local TERMWIDTH
