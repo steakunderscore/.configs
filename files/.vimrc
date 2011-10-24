@@ -1,6 +1,10 @@
 set nocompatible
 filetype off " For vundle.
 
+if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
+  !git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -17,6 +21,9 @@ Bundle 'ervandew/supertab'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
+" Clang based C/C++ Completion
+Bundle "Rip-Rip/clang_complete"
+
 " New SnipMate.
 Bundle 'garbas/vim-snipmate'
 Bundle 'rbonvall/snipmate-snippets-bib'
@@ -25,6 +32,7 @@ Bundle 'honza/snipmate-snippets'
 " Language syntaxes.
 Bundle 'Nemo157/glsl.vim'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'kchmck/vim-coffee-script'
 
 " Color scheme.
 Bundle 'altercation/vim-colors-solarized'
@@ -53,6 +61,7 @@ set textwidth=80                                        " Set maximum width to 8
 set suffixes+=.aux,.blg,.bbl,.log                       " Lower priority for tab completion
 set cursorline                                          " Highlight the current line
 set nofoldenable                                        " Turn them off until I bother learning them
+set thesaurus+=~/.vim/thesaurus/mthesaur.txt            " Use the thesaurus from http://www.gutenberg.org/ebooks/3202
 
 let g:tex_flavor = "latex"                              " Give latex higher priority over tex.
 let g:SuperTabDefaultCompletionType = "context"         " Set SuperTab to try and determine completion type automatically.
@@ -78,6 +87,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 au BufWritePost vimrc source ~/.vimrc
 
 map <F5> :call SaveAndMake()<CR>
+imap <F5> <C-o>:call SaveAndMake()<CR>
 
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
