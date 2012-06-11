@@ -53,6 +53,7 @@ set autoindent                                          " Use smart indentation.
 set background=dark                                     " Who would use a light terminal?
 set showmatch                                           " Show matching brackets.
 set ignorecase smartcase                                " Do smart case matching.
+set hlsearch                                            " Highlight search results
 set incsearch                                           " Incremental search.
 set nowrap                                              " Turn off line wrapping.
 set sidescroll=1                                        " Set how far to scroll when moving off the edge.
@@ -60,10 +61,11 @@ set list listchars=precedes:<,extends:>,tab:»\ ,trail:▴ " Show tabs, lines go
 set ruler                                               " Show current position in document at bottom right.
 set scrolloff=5                                         " Scroll 5 lines from the top and bottom.
 set sidescrolloff=10                                    " Scroll 30 characters from the edges.
-set spell                                               " Spell checking on.
+set spell spellfile=~/.vim/spell/en.utf-8.add           " Spell checking on.
 set undofile undodir=/tmp                               " Store persistent undo files in /tmp.
 set textwidth=80                                        " Set maximum width to 80 characters.
-set suffixes+=.aux,.blg,.bbl,.log                       " Lower priority for tab completion
+set suffixes+=.aux,.blg,.bbl,.log,.dvi,.brf,.cb,.ind    " Lower priority for tab completion
+set suffixes+=.idx,.ilg,.inx,.out,.toc
 set cursorline                                          " Highlight the current line
 set nofoldenable                                        " Turn them off until I bother learning them
 set thesaurus+=~/.vim/thesaurus/mthesaur.txt            " Use the thesaurus from http://www.gutenberg.org/ebooks/3202
@@ -81,6 +83,16 @@ let g:SuperTabMappingBackward = '<s-nul>'
 let g:snips_trigger_key='<c-space>'
 
 silent! colorscheme solarized
+
+" Better spell highlighting (http://hacktux.com/vim/spellcheck)
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
 
 au FileType markdown\|rst\|tex\|plaintex setlocal textwidth=80
 au FileType java\|c\|c++\|glsl setlocal tabstop=4 shiftwidth=4
