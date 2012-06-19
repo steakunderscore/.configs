@@ -1,8 +1,27 @@
+# SSH per host config
+.ssh/id_rsa
+.ssh/id_rsa.pub
+
+# Vim per host config
+.vim/.netrwhist
+
+#ssh
+.ssh/authorized_keys
+
+#Unison
+.unison/
+!.unison/common
+!.unison/docs
+!.unison/*.prf
+
+#Compiled files
 *.rbc
 *.pyc
 *.o
 *.bbl
 *.blg
 *.fdb_latexmk
+
+#OS file system files
 .DS_Store
 Thumbs.db

@@ -1,0 +1,24 @@
+[user]
+    name = Henry Jenkins
+    email = henry@henryjenkins.name
+[github]
+    user = steakunderscore
+    token = 6d69072c35ebc2b69e18b7342ad23ec6
+[color]
+    ui = true
+[core]
+    editor = vim
+[alias]
+    co = checkout
+    p = push
+    ci = commit
+    rb = rebase
+    rc = rebase --continue
+    rs = rebase --skip
+    br = branch -avv
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    rp = remote prune
+    statsu = status
+[branch]
+    autosetuprebase = always
+
