@@ -37,6 +37,9 @@ Bundle 'Nemo157/glsl.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'PProvost/vim-ps1'
+Bundle 'leshill/vim-json'
+
+Bundle 'tpope/vim-fugitive'
 
 " Color scheme.
 Bundle 'altercation/vim-colors-solarized'
@@ -61,7 +64,7 @@ set list listchars=precedes:<,extends:>,tab:»\ ,trail:▴ " Show tabs, lines go
 set ruler                                               " Show current position in document at bottom right.
 set scrolloff=5                                         " Scroll 5 lines from the top and bottom.
 set sidescrolloff=10                                    " Scroll 30 characters from the edges.
-set spell spellfile=~/.vim/spell/en.utf-8.add           " Spell checking on.
+set nospell spellfile=~/.vim/spell/en.utf-8.add           " Spell checking on.
 set undofile undodir=/tmp                               " Store persistent undo files in /tmp.
 set textwidth=80                                        " Set maximum width to 80 characters.
 set suffixes+=.aux,.blg,.bbl,.log,.dvi,.brf,.cb,.ind    " Lower priority for tab completion
@@ -116,7 +119,7 @@ imap <F5> <C-o>:call SaveAndMake()<CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Clear highlighting when <esc> is pressed
-nnoremap <esc> :noh<cr><esc>
+"nnoremap <esc> :noh<cr><esc>
 
 command Wq wq
 command -bang Q q<bang>
