@@ -1,6 +1,6 @@
-export EC2_PRIVATE_KEY="$(ls $HOME/.ec2/pk-*.pem)"
-export EC2_CERT="$(ls $HOME/.ec2/cert-*.pem)"
-export AWS_CREDENTIALS_FILE="$HOME/.ec2/aws-credentials"
+[[ -e "$HOME/.ec2/pk-*.pem" ]] && export EC2_PRIVATE_KEY="$(ls $HOME/.ec2/pk-*.pem)"
+[[ -e "$HOME/.ec2/cert-*.pem" ]] && export EC2_CERT="$(ls $HOME/.ec2/cert-*.pem)"
+[[ -e "$HOME/.ec2/aws-credentials" ]] && export AWS_CREDENTIALS_FILE="$HOME/.ec2/aws-credentials"
 export LANG=en_NZ.utf8
 export ZDOTDIR="$HOME/.zsh"
 
